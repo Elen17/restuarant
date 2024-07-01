@@ -34,8 +34,6 @@ CREATE TABLE `order`
     customer_id  BIGINT NOT NULL,
     total_amount DOUBLE NOT NULL,
     status_id    INT NOT NULL,
-    CONSTRAINT fk_order_status_id FOREIGN KEY (status_id)
-        REFERENCES order_status (id),
     CONSTRAINT fk_order_customer_id FOREIGN KEY (customer_id) REFERENCES customer (id)
         ON DELETE CASCADE
 );

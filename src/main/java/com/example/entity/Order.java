@@ -26,7 +26,7 @@ public class Order implements Serializable {
     private Double totalAmount;
 
     @Enumerated(EnumType.ORDINAL)
-    @Column(nullable = true, name = "status_id")
+    @Column(nullable = false, name = "status_id")
     private OrderStatus status;
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<OrderItem> orderItems;
